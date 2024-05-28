@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'KartriderBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KartriderMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@layer base{
+  :root {
+    font-family: 'KartriderMedium', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #202020;
+    background-color: #F2F2F2;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: inherit;
+  }
+  .font-bold{
+    font-family: 'KartriderBold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }  
+
+}
+
+@layer components {
+  h1 { 
+    @apply text-2xl text-center break-keep;
+   }
+   h2 { 
+    @apply text-xl text-center break-keep;
+   }
+   h3 { 
+    @apply text-lg text-center break-keep;
+   }
+   h4 { 
+    @apply text-base text-center break-keep;
+   }
+   .caption{
+    @apply text-xs text-center break-keep text-black-3;
+   }
+}
+
