@@ -3,6 +3,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        fontFamily:{
+         'sans': ['KartriderMedium', 'Helvetica', 'Arial', 'sans-serif'],
+        },
         transparent: "transparent",
         black: {
           1: "#202020",

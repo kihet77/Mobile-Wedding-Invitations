@@ -2,25 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'KartriderBold';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderBold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'KartriderMedium';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderMedium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-}
 
-@layer base{
+@layer base {
+  @font-face {
+    font-family: "KartriderBold";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderBold.woff2")
+      format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "KartriderMedium";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderMedium.woff2")
+      format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }  
   :root {
-    font-family: 'KartriderMedium', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "KartriderMedium", Inter, system-ui, Avenir, Helvetica, Arial,
+      sans-serif;
     font-weight: 500;
     color: #202020;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -29,28 +32,74 @@
   a {
     text-decoration: inherit;
   }
-  .font-bold{
-    font-family: 'KartriderBold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  .font-bold {
+    font-family: "KartriderBold", Inter, system-ui, Avenir, Helvetica, Arial,
+      sans-serif;
     font-weight: 700;
-  }  
-
+  }
 }
 
 @layer components {
-  h1 { 
+  h1 {
     @apply text-2xl text-center break-keep;
-   }
-   h2 { 
+  }
+  h2 {
     @apply text-xl text-center break-keep;
-   }
-   h3 { 
+  }
+  h3 {
     @apply text-lg text-center break-keep;
-   }
-   h4 { 
+  }
+  h4 {
     @apply text-base text-center break-keep;
-   }
-   .caption{
+  }
+  .caption {
     @apply text-xs text-center break-keep text-black-3;
-   }
+  }
 }
 
+@layer components {
+  .csscalendar {
+    background-color: transparent;
+    border: none;
+    .react-calendar{
+      @apply bg-transparent border-spacing-0 font-['KartriderMedium'] pointer-events-none
+    }
+    .react-calendar--doubleView {
+      @apply w-full
+    }
+    
+    /* 년,월 선택 숨기기 */
+    .react-calendar__navigation{
+      @apply hidden
+    }
+    /* 요일 */
+    .react-calendar__month-view__weekdays {
+      @apply text-lg text-black-1 font-['KartriderMedium']
+    }
+    .react-calendar__month-view__weekdays abbr{
+      @apply no-underline 
+    }
+    .react-calendar__month-view__weekdays__weekday--weekend abbr[title="일요일"] {
+      color: #BA373B;
+    }
+    .react-calendar__month-view__weekdays__weekday--weekend abbr [title="토요일"] {
+      color: #375CBA;
+    }
+    /* 날짜 */
+    .react-calendar__tile.saturday {
+      color: #375CBA;
+    }
+    .react-calendar__tile.sunday {
+      color: #BA373B;
+    }
+    .react-calendar__tile--now {
+      @apply bg-transparent
+    }
+    .react-calendar__tile{
+      @apply text-base text-black-1 font-['KartriderMedium'] pointer-events-none
+    }
+    .react-calendar__tile--active{
+      @apply bg-blue-2 text-white-1 text-lg font-['KartriderBold'] rounded-full
+    }
+  }
+}
